@@ -1,0 +1,28 @@
+# Dependências e builds
+node_modules/
+dist/
+.cache/
+
+# Ambientes e segredos
+.env
+.env.*
+*.local
+*.key
+*.pem
+*.token
+credentials*
+secrets*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Materiais internos e de referência da agência
+segundo cerebro/
+scratch/
+*.tmp
+*.log
+
+# Imagens brutas de trabalho
+assets/raw_logo.jpg

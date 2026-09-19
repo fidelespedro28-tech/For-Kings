@@ -1,0 +1,714 @@
+/* ==========================================================================
+   FOR KING'S — LINK-IN-BIO OFICIAL
+   Direção de Arte: Editorial Alta Alfaiataria & Moda Masculina Contemporânea
+   Paleta extraída do logo original: #080706, #b5956b, #e0c49d, #4e3d2c
+   ========================================================================== */
+
+:root {
+  /* Cores Oficiais Extraídas do Logo */
+  --bg-base: #080706;
+  --bg-surface: rgba(18, 15, 12, 0.72);
+  --bg-surface-hover: rgba(26, 22, 17, 0.88);
+  --bg-card: rgba(15, 13, 10, 0.6);
+  
+  --gold-primary: #b5956b;
+  --gold-bright: #e0c49d;
+  --gold-deep: #4e3d2c;
+  --gold-glow: rgba(181, 149, 107, 0.28);
+  --gold-border: rgba(181, 149, 107, 0.22);
+  --gold-border-focus: rgba(224, 196, 157, 0.55);
+
+  --text-pure: #ffffff;
+  --text-main: #f6f2ec;
+  --text-muted: #9e9185;
+  --text-dim: #70655a;
+
+  /* Tipografia */
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Espaçamentos & Proporções */
+  --radius-btn: 14px;
+  --radius-card: 20px;
+  --max-w: 460px;
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset Universal & Higienização */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-height: 100dvh;
+  position: relative;
+  background-color: var(--bg-base);
+  overflow-x: hidden !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1.25rem 3.5rem 1.25rem;
+}
+
+/* ==========================================================================
+   CAMADAS DE FUNDO & ILUMINAÇÃO CONTÍNUA (Sem caixas cinzas, sem cortes secos)
+   ========================================================================== */
+
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.65;
+  will-change: opacity;
+}
+
+.video-bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  filter: contrast(1.1) brightness(0.7);
+}
+
+.ambient-glow {
+  position: fixed;
+  top: -10vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140vw;
+  max-width: 900px;
+  height: 70vh;
+  background: radial-gradient(ellipse at 50% 20%, rgba(181, 149, 107, 0.14) 0%, rgba(181, 149, 107, 0.04) 45%, transparent 75%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.vignette-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 40%, transparent 40%, rgba(8, 7, 6, 0.85) 90%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL
+   ========================================================================== */
+
+.page-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+/* ==========================================================================
+   TOP BAR MINIMALISTA
+   ========================================================================== */
+
+.location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(181, 149, 107, 0.08);
+  border: 1px solid rgba(181, 149, 107, 0.16);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.location-tag svg {
+  width: 12px;
+  height: 12px;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   HERO MONUMENTAL
+   ========================================================================== */
+
+.hero-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.logo-frame {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg at 50% 50%, rgba(181, 149, 107, 0.4), rgba(78, 61, 44, 0.1), rgba(224, 196, 157, 0.4), rgba(181, 149, 107, 0.4));
+  filter: blur(8px);
+  opacity: 0.75;
+  animation: haloRotate 14s linear infinite;
+}
+
+@keyframes haloRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.logo-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0d0b09;
+  border: 1.5px solid var(--gold-border);
+  padding: 3px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(181, 149, 107, 0.15);
+  overflow: hidden;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-size: 2.15rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-pure);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+}
+
+.brand-signature {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #ffffff 0%, var(--gold-bright) 50%, var(--gold-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.65rem;
+}
+
+.brand-segment {
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   AÇÕES & CTA DE ALTA CONVERSÃO
+   ========================================================================== */
+
+.actions-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+/* CTA Monumental — WhatsApp Oficial */
+.cta-primary {
+  position: relative;
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.35rem;
+  background: linear-gradient(135deg, #1b1712 0%, #120f0c 100%);
+  border: 1.5px solid var(--gold-primary);
+  border-radius: var(--radius-btn);
+  color: var(--text-pure);
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 25px rgba(181, 149, 107, 0.2);
+  transition: transform 0.25s var(--transition-smooth), border-color 0.25s ease, box-shadow 0.25s ease;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.cta-primary:hover,
+.cta-primary:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--gold-bright);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7), 0 0 35px rgba(224, 196, 157, 0.35);
+  outline: none;
+}
+
+.cta-primary:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* Shiny sweep de alta elegância (sem flash agressivo) */
+.shiny-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.08) 42%,
+    rgba(224, 196, 157, 0.28) 50%,
+    rgba(255, 255, 255, 0.08) 58%,
+    transparent 80%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  animation: sweepPass 5.5s infinite var(--transition-smooth);
+}
+
+@keyframes sweepPass {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  35% { transform: translateX(150%) skewX(-20deg); }
+  100% { transform: translateX(150%) skewX(-20deg); }
+}
+
+.cta-content-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(181, 149, 107, 0.2) 0%, rgba(78, 61, 44, 0.3) 100%);
+  border: 1px solid rgba(224, 196, 157, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-bright);
+  flex-shrink: 0;
+}
+
+.icon-badge svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+.cta-texts {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.cta-label-lead {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-pure);
+  line-height: 1.25;
+}
+
+.cta-subtext {
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--gold-bright);
+  letter-spacing: 0.02em;
+}
+
+.cta-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--gold-primary);
+  z-index: 2;
+  transition: transform 0.25s var(--transition-smooth), color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.cta-primary:hover .cta-arrow {
+  transform: translateX(4px);
+  color: var(--gold-bright);
+}
+
+/* ==========================================================================
+   CARDS DE CONEXÃO & LOCALIZAÇÃO
+   ========================================================================== */
+
+.action-card {
+  position: relative;
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-btn);
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.25s var(--transition-smooth);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.action-card:hover,
+.action-card:focus-visible {
+  background: var(--bg-surface-hover);
+  border-color: var(--gold-border-focus);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+.action-card:active {
+  transform: translateY(1px);
+}
+
+.card-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(181, 149, 107, 0.08);
+  border: 1px solid rgba(181, 149, 107, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.card-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-texts {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.card-title {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-pure);
+  letter-spacing: 0.02em;
+}
+
+.card-subtitle {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.action-card .card-arrow {
+  width: 18px;
+  height: 18px;
+  color: var(--text-dim);
+  transition: transform 0.25s var(--transition-smooth), color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.action-card:hover .card-arrow {
+  transform: translateX(3px);
+  color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   SEÇÃO LOJA FÍSICA & CONTATO INSTITUCIONAL
+   ========================================================================== */
+
+.editorial-section {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(18, 15, 12, 0.6) 0%, rgba(12, 10, 8, 0.8) 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.35rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(181, 149, 107, 0.12);
+}
+
+.section-header svg {
+  width: 18px;
+  height: 18px;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.section-header-title {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-pure);
+}
+
+.address-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.address-text {
+  font-size: 0.86rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.address-city {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.maps-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  min-height: 48px;
+  background: rgba(181, 149, 107, 0.1);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-btn);
+  color: var(--gold-bright);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s var(--transition-smooth);
+  touch-action: manipulation;
+}
+
+.maps-btn:hover,
+.maps-btn:focus-visible {
+  background: rgba(181, 149, 107, 0.2);
+  border-color: var(--gold-primary);
+  color: var(--text-pure);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.maps-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.phone-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(181, 149, 107, 0.1);
+}
+
+.phone-label {
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Exibição textual estrita do telefone (sem link) */
+.phone-number-text {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  user-select: all;
+}
+
+/* ==========================================================================
+   FOOTER INSTITUCIONAL & MONOGRAMA
+   ========================================================================== */
+
+.page-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+  padding-top: 1rem;
+}
+
+.footer-crown {
+  width: 24px;
+  height: 24px;
+  color: var(--gold-primary);
+  opacity: 0.6;
+  margin-bottom: 0.25rem;
+}
+
+.footer-copy {
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.footer-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--gold-primary);
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE & REDUCED MOTION
+   ========================================================================== */
+
+/* Foco visível acessível */
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .shiny-sweep,
+  .logo-halo {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINTS RESPONSIVOS RIGOROSOS (320px, 360px, 390px, 414px, 768px+)
+   ========================================================================== */
+
+@media (max-width: 360px) {
+  body {
+    padding: 0 0.85rem 2.5rem 0.85rem;
+  }
+  .brand-title {
+    font-size: 1.85rem;
+  }
+  .brand-signature {
+    font-size: 1rem;
+  }
+  .logo-frame {
+    width: 96px;
+    height: 96px;
+  }
+  .cta-primary {
+    padding: 0.85rem 1rem;
+  }
+  .cta-label-lead {
+    font-size: 0.88rem;
+  }
+  .icon-badge {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+  .page-wrapper {
+    padding-top: 3rem;
+  }
+  .brand-title {
+    font-size: 2.5rem;
+  }
+  .brand-signature {
+    font-size: 1.25rem;
+  }
+  .cta-primary {
+    padding: 1.2rem 1.6rem;
+  }
+}
