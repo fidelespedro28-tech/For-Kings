@@ -678,32 +678,6 @@ body {
 
 .maps-btn svg {
   width: 17px;
-  height: 17px;
-}
-
-.phone-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.95rem;
-  border-top: 1px solid rgba(181, 149, 107, 0.12);
-}
-
-.phone-label {
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-/* Exibição textual estrita do telefone (sem link) */
-.phone-number-text {
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--text-main);
-  user-select: all;
 }
 
 /* ==========================================================================
