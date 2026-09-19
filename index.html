@@ -15,6 +15,7 @@
 
   <!-- Preload de Asset Crítico -->
   <link rel="preload" as="image" href="assets/logo_300.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/logo_watermark.webp" type="image/webp">
 
   <!-- Open Graph / WhatsApp / Instagram / Facebook -->
   <meta property="og:type" content="website">
@@ -49,6 +50,18 @@
     <video class="video-bg" autoplay muted loop playsinline poster="assets/hero_poster.webp">
       <source src="assets/background.webm" type="video/webm">
     </video>
+  </div>
+
+  <!-- Marca D'água Monumental da Logo no Fundo (Perfeitamente enquadrada em todos os dispositivos) -->
+  <div class="brand-watermark-layer" aria-hidden="true">
+    <img 
+      src="assets/logo_watermark.webp" 
+      alt="" 
+      class="brand-watermark" 
+      width="300" 
+      height="300" 
+      decoding="async"
+    >
   </div>
 
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
@@ -101,36 +114,38 @@
       >
         <div class="shiny-sweep" aria-hidden="true"></div>
         <div class="cta-content-left">
-          <div class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          <div class="icon-badge whatsapp-badge" aria-hidden="true">
+            <!-- Ícone Oficial Vetorial WhatsApp -->
+            <svg viewBox="0 0 24 24" class="icon-svg-official" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zm0 1.67c4.44 0 8.24 3.8 8.24 8.24 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.14l-.3-.18-3.12.82.83-3.04-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.44 3.7-8.23 8.24-8.23zm-3.51 3.66c-.16 0-.43.06-.66.31-.23.25-.85.84-.85 2.04 0 1.2.87 2.36.99 2.52.12.17 1.7 2.61 4.13 3.66 2.02.87 2.43.7 2.88.66.45-.04 1.44-.59 1.65-1.17.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.46-.28s-1.18-.58-1.4-.66c-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.17-.28.19-.52.07-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.2-1.42-1.34-1.66-.14-.24-.01-.37.11-.49.11-.11.25-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.53-1.28-.73-1.76-.19-.47-.39-.4-.54-.41-.14-.01-.31-.01-.47-.01z"/>
             </svg>
           </div>
           <div class="cta-texts">
             <span class="cta-label-lead">Atendimento WhatsApp</span>
-            <span class="cta-subtext">Converse com nossa equipe</span>
+            <span class="cta-subtext">Atendimento Exclusivo</span>
           </div>
         </div>
-        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
+        <div class="cta-action-right">
+          <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
       </a>
 
       <!-- Instagram Oficial -->
       <a 
         href="https://www.instagram.com/forkings_men/" 
-        class="action-card" 
+        class="action-card card-instagram" 
         target="_blank" 
         rel="noopener noreferrer" 
         aria-label="Acessar Instagram oficial @forkings_men (Abre em nova aba)"
       >
         <div class="cta-content-left">
-          <div class="card-icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          <div class="card-icon-wrap insta-badge" aria-hidden="true">
+            <!-- Ícone Oficial Vetorial Instagram -->
+            <svg viewBox="0 0 24 24" class="icon-svg-official" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
           </div>
           <div class="card-texts">
@@ -138,10 +153,12 @@
             <span class="card-subtitle">@forkings_men</span>
           </div>
         </div>
-        <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
+        <div class="cta-action-right">
+          <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
       </a>
 
     </section>
@@ -149,11 +166,16 @@
     <!-- Informações da Loja Física & Contato -->
     <section class="editorial-section" aria-labelledby="store-heading">
       <div class="section-header">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-          <polyline points="9 22 9 12 15 12 15 22"></polyline>
-        </svg>
-        <h2 id="store-heading" class="section-header-title">Loja Física</h2>
+        <div class="header-icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <div class="header-text-block">
+          <h2 id="store-heading" class="section-header-title">Loja Física</h2>
+          <span class="section-header-subtitle">Espaço Exclusivo</span>
+        </div>
       </div>
 
       <div class="address-block">

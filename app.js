@@ -141,12 +141,19 @@
       // Timeline de Entrada Suave (sem esconder conteúdo se o script falhar)
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      tl.from('.location-tag', {
+      tl.from('.brand-watermark-layer', {
+        opacity: 0,
+        scale: 0.94,
+        duration: 1.2,
+        ease: 'power2.out',
+        clearProps: 'opacity,scale'
+      })
+      .from('.location-tag', {
         opacity: 0,
         y: -12,
         duration: 0.6,
         delay: 0.1
-      })
+      }, '-=1.0')
       .from('.logo-frame', {
         opacity: 0,
         scale: 0.88,
